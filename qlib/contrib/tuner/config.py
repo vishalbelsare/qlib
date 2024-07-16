@@ -1,6 +1,9 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
+# pylint: skip-file
+# flake8: noqa
+
 import yaml
 import copy
 import os
@@ -8,7 +11,6 @@ import os
 
 class TunerConfigManager:
     def __init__(self, config_path):
-
         if not config_path:
             raise ValueError("Config path is invalid.")
         self.config_path = config_path
@@ -55,7 +57,6 @@ class PipelineExperimentConfig:
 
 class OptimizationConfig:
     def __init__(self, config, TUNER_CONFIG_MANAGER):
-
         self.report_type = config.get("report_type", "pred_long")
         if self.report_type not in [
             "pred_long",

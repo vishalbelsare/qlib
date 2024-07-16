@@ -1,6 +1,9 @@
 # Copyright (c) Microsoft Corporation.
 # Licensed under the MIT License.
 
+# pylint: skip-file
+# flake8: noqa
+
 import yaml
 import pathlib
 import pandas as pd

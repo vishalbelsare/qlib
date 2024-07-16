@@ -15,7 +15,6 @@ from plotly.figure_factory import create_distplot
 
 
 class BaseGraph:
-
     _name = None
 
     def __init__(
@@ -282,8 +281,10 @@ class SubplotsGraph:
         if self._subplots_kwargs is None:
             self._init_subplots_kwargs()
 
-        self.__cols = self._subplots_kwargs.get("cols", 2)
-        self.__rows = self._subplots_kwargs.get("rows", math.ceil(len(self._df.columns) / self.__cols))
+        self.__cols = self._subplots_kwargs.get("cols", 2)  # pylint: disable=W0238
+        self.__rows = self._subplots_kwargs.get(  # pylint: disable=W0238
+            "rows", math.ceil(len(self._df.columns) / self.__cols)
+        )
 
         self._sub_graph_data = sub_graph_data
         if self._sub_graph_data is None:
